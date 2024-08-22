@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:FruitGrocery.ViewModels"
+             x:Class="FruitGrocery.LoginPage"
+             Title="Fruit Grocery Store" 
+             BackgroundColor="Brown">
+    <!-- Set the binding context to LoginViewModel -->
+    <ContentPage.BindingContext>
+        <local:LoginViewModel />
+    </ContentPage.BindingContext>
+    <!-- Grid layout to overlay elements -->
+    <Grid Padding="30" VerticalOptions="CenterAndExpand">
+        <!-- Image to display the logo -->
+        <Image Source="logo.png" WidthRequest="850" HeightRequest="750" HorizontalOptions="Center" />
+        <!-- Label to display the login title on top of the image -->
+        <Label Text="Login" FontSize="Large" HorizontalOptions="CenterAndExpand" VerticalOptions="Fill" Margin="10,0,10,20" FontAttributes="Bold" TextColor="White"/>
+        <!-- StackLayout to arrange Entry and Button vertically -->
+        <StackLayout Padding="10" Spacing="10" VerticalOptions="End">
+            <!-- Entry for the user to input their username -->
+            <Entry Placeholder="Username" Text="{Binding Username}" Margin="0,0,0,10" HorizontalOptions="FillAndExpand" TextColor="Black"/>
+            <!-- Entry for the user to input their password -->
+            <Entry Placeholder="Password" Text="{Binding Password}" IsPassword="True" Margin="0,0,0,20" HorizontalOptions="FillAndExpand" TextColor="Black"/>
+            <!-- Button to submit the login form -->
+            <Button Text="Login" Command="{Binding LoginCommand}" BackgroundColor="#6200EE" TextColor="White" CornerRadius="20" HorizontalOptions="FillAndExpand" Padding="10" />
+            <!-- Label to display a login failure message -->
+            <Label Text="Login Failed" TextColor="Red" IsVisible="{Binding IsLoginFailed}" HorizontalOptions="Center" Margin="10,0,10,0" />
+        </StackLayout>
+    </Grid>
+</ContentPage>

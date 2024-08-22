@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FruitGrocery.CheckoutPage"
+             Title="Checkout">
+    <StackLayout>
+        <Label Text="Enter Shipping Details" FontSize="Large" HorizontalOptions="Center" Margin="10"/>
+        <Entry Placeholder="Name" x:Name="nameEntry" Margin="10"/>
+        <Entry Placeholder="Address" x:Name="addressEntry" Margin="10"/>
+        <Entry Placeholder="City" x:Name="cityEntry" Margin="10"/>
+        <Entry Placeholder="Postal Code" x:Name="postalCodeEntry" Margin="10"/>
+        <Button Text="Buy Now" Clicked="BuyNow_Clicked" Margin="10"/>
+    </StackLayout>
+</ContentPage>
